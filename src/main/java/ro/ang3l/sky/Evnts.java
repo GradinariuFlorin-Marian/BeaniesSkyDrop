@@ -59,6 +59,7 @@ public class Evnts implements Listener {
                     Main.crateType = "storm";
                     Main.used.clear();
                     for (Player p : Bukkit.getOnlinePlayers()) {
+                        p.sendTitle(Utils.color("&e&lSky Drops!"), Utils.color("&f&l" + e.getPlayer().getName() + " &7&lRestocked all warzone chests!"));
                         p.sendMessage(Utils.color(e.getPlayer().getName() + " &7&lhas triggered a storm in the Warezone... Sky Chests have been restocked!"));
                     }
                     if (e.getItem().getAmount() > 1) {
@@ -71,6 +72,7 @@ public class Evnts implements Listener {
                     Main.crateType = "superStorm";
                     Main.used.clear();
                     for (Player p : Bukkit.getOnlinePlayers()) {
+                        p.sendTitle(Utils.color("&b&lSuper &e&lSky Drops!"), Utils.color("&f&l" + e.getPlayer().getName() + " &7&lRestocked all warzone chests!"));
                         p.sendMessage(Utils.color(e.getPlayer().getName() + " &7&lhas triggered a super storm in the Warezone... Sky Chests have been restocked!"));
                     }
                     if (e.getItem().getAmount() > 1) {
@@ -84,7 +86,12 @@ public class Evnts implements Listener {
                 if (e.getClickedBlock().getType().equals(Material.CHEST) && Main.crates.contains(e.getClickedBlock().getLocation())) {
                     if (Main.crateType.isEmpty() || Main.used.contains(e.getClickedBlock().getLocation())) {
                         e.setCancelled(true);
-                        e.getPlayer().sendMessage(Utils.color("&eCrate looted!"));
+                        Chest chest = (Chest) e.getClickedBlock().getState();
+                        if (!chest.getInventory().isEmpty()) {
+                            e.setCancelled(false);
+                        }else{
+                            e.getPlayer().sendMessage(Utils.color("&eCrate looted!"));
+                        }
                     } else if (e.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
                         e.setCancelled(false);
                         if (Main.crateType.equalsIgnoreCase("storm")) {
