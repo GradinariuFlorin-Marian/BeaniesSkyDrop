@@ -1,0 +1,43 @@
+Crates: []
+Storm:
+  "1":
+    Type: ITEM
+    ItemType: DIAMOND_SWORD
+    Amount: 1
+    Name: "&eTest"
+    Enchant:
+      - unbreaking:3
+    Lore:
+      - "&eTest line Storm"
+      - ""
+      - "&cAnother test line"
+  "2":
+    Type: COMMAND
+    Command:
+      - "broadcast test1 %player%"
+      - "broadcast test2"
+  "3":
+    Type: COMMAND
+    Command:
+      - "broadcast test6"
+SuperStorm:
+  "1":
+    Type: ITEM
+    ItemType: DIAMOND_AXE
+    Amount: 1
+    Name: "&eTest"
+    Enchant:
+      - unbreaking:3
+    Lore:
+      - "&bTest line Super Storm"
+      - ""
+      - "&dAnother test line"
+  "2":
+    Type: COMMAND
+    Command:
+      - "broadcast test4 %player%"
+      - "broadcast test5"
+  "3":
+    Type: COMMAND
+    Command:
+      - "broadcast test6"

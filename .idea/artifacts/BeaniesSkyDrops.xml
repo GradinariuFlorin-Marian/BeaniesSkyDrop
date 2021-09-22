@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="BeaniesSkyDrops">
+    <output-path>$USER_HOME$/Desktop</output-path>
+    <root id="archive" name="BeaniesSkyDrops.jar">
+      <element id="module-output" name="BeaniesSkyDrops" />
+    </root>
+  </artifact>
+</component>
