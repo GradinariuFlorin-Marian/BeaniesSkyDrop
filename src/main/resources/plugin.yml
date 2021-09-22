@@ -1,0 +1,6 @@
+main: ro.ang3l.sky.Main
+name: BeaniesSkyDrops
+version: 1.0
+commands:
+  beaniesskydrops:
+    description: Key receiver.
